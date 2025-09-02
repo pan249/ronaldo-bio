@@ -1,451 +1,192 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Biografi Cristiano Ronaldo</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Biografi Cristiano Ronaldo - Page 1</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Poppins', Arial, sans-serif;
+      background: linear-gradient(135deg, #141e30, #243b55);
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: linear-gradient(90deg, #ff512f, #dd2476);
+      padding: 20px;
+      text-align: center;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: 600;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
 
-        body {
-            font-family: 'Poppins', Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
-            color: #f0f0f0;
-            line-height: 1.6;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-        header {
-            background: linear-gradient(135deg, #6a11cb, #2575fc);
-            color: white;
-            text-align: center;
-            padding: 60px 20px 40px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-        }
-        header h1 {
-            margin: 0;
-            font-size: 3em;
-            letter-spacing: 2px;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
-        }
-        .container {
-            max-width: 1100px;
-            margin: -40px auto 40px;
-            padding: 30px 40px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 15px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
-            backdrop-filter: blur(10px);
-            flex-grow: 1;
-        }
-        .profile {
-            display: flex;
-            align-items: center;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-            gap: 30px;
-        }
-        .profile img {
-            max-width: 220px;
-            border-radius: 20px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
-            cursor: pointer;
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-            filter: drop-shadow(0 0 5px #2575fc);
-        }
-        .profile img:hover {
-            transform: scale(1.1) rotate(3deg);
-            box-shadow: 0 12px 30px rgba(38, 115, 255, 0.8);
-            filter: drop-shadow(0 0 15px #6a11cb);
-        }
-        .profile .bio {
-            flex: 1;
-            min-width: 320px;
-            background: rgba(0,0,0,0.3);
-            padding: 25px 30px;
-            border-radius: 15px;
-            box-shadow: inset 0 0 15px rgba(255,255,255,0.1);
-            backdrop-filter: blur(5px);
-        }
-        .profile .bio h2 {
-            color: #ffd700;
-            margin-bottom: 15px;
-            text-shadow: 1px 1px 5px #000;
-        }
-        section {
-            margin-bottom: 20px;
-            background: rgba(0,0,0,0.25);
-            border-radius: 15px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-            backdrop-filter: blur(5px);
-            overflow: hidden;
-            transition: max-height 0.5s ease, padding 0.5s ease;
-        }
-        section.collapsed {
-            max-height: 0;
-            padding-top: 0;
-            padding-bottom: 0;
-            margin-bottom: 0;
-            box-shadow: none;
-        }
-        section h2 {
-            color: #ffcc00;
-            border-bottom: 3px solid #ffcc00;
-            padding: 12px 30px;
-            margin: 0;
-            font-weight: 600;
-            letter-spacing: 1.2px;
-            text-shadow: 1px 1px 4px #000;
-            cursor: pointer;
-            user-select: none;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        section h2::after {
-            content: '▼';
-            font-size: 0.8em;
-            transition: transform 0.3s ease;
-            color: #ffcc00;
-        }
-        section.collapsed h2::after {
-            transform: rotate(-90deg);
-        }
-        section > *:not(h2) {
-            padding: 0 30px 25px;
-        }
-        ul {
-            padding-left: 25px;
-            list-style-type: square;
-        }
-        li {
-            margin-bottom: 12px;
-            font-weight: 500;
-            color: #e0e0e0;
-        }
-        li strong {
-            color: #ffd700;
-        }
-        .achievements {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
-        .achievement-item {
-            background: linear-gradient(135deg, #2575fc, #6a11cb);
-            padding: 20px 25px;
-            border-radius: 15px;
-            color: white;
-            font-weight: 600;
-            box-shadow: 0 8px 25px rgba(106, 17, 203, 0.7);
-            text-align: center;
-        }
-        footer {
-            text-align: center;
-            padding: 25px 20px;
-            background: linear-gradient(135deg, #6a11cb, #2575fc);
-            color: white;
-        }
-        #stats-section {
-            background: rgba(0,0,0,0.35);
-            padding: 30px 30px 40px;
-            border-radius: 15px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
-            margin-bottom: 20px;
-            position: relative;
-        }
-        #stats-canvas {
-            width: 100%;
-            max-width: 700px;
-            height: 350px;
-            display: block;
-            margin: 0 auto;
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
-            border-radius: 15px;
-            cursor: pointer;
-        }
-        /* Tooltip style */
-        #tooltip {
-            position: absolute;
-            background: rgba(0,0,0,0.8);
-            color: #ffd700;
-            padding: 6px 10px;
-            border-radius: 6px;
-            pointer-events: none;
-            font-weight: 600;
-            font-size: 14px;
-            white-space: nowrap;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            z-index: 10;
-        }
-        /* Back to top button */
-        #back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: #6a11cb;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 45px;
-            height: 45px;
-            font-size: 24px;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s ease;
-            z-index: 100;
-        }
-        #back-to-top.show {
-            opacity: 1;
-            pointer-events: auto;
-        }
-    </style>
+    /* Animasi */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 1s ease forwards;
+    }
+    @keyframes fadeIn {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Hero */
+    .hero {
+     background: linear-gradient(135deg, rgba(255,81,47,0.9), rgba(221,36,118,0.8));
+     color: white;
+     text-align: center;
+     padding: 80px 20px;
+     border-radius: 15px;
+     margin-bottom: 30px;
+
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    /* Card */
+    .card {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 20px;
+      border-radius: 15px;
+      margin: 20px 0;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.15);
+    }
+    .profile img {
+      max-width: 200px;
+      border-radius: 15px;
+      float: left;
+      margin-right: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+    }
+    .bio h2 { margin-top: 0; }
+
+    /* Timeline Karier */
+    .timeline {
+      list-style: none;
+      padding: 0;
+    }
+    .timeline li {
+      margin: 15px 0;
+      padding-left: 20px;
+      border-left: 3px solid #ff512f;
+    }
+    .timeline strong { color: #ffb347; }
+
+    /* Fakta Menarik */
+    .facts {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+      gap: 15px;
+    }
+    .fact {
+      background: rgba(255,255,255,0.1);
+      padding: 15px;
+      border-radius: 12px;
+      text-align: center;
+      font-size: 0.95rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+      background: rgba(0,0,0,0.4);
+      border-top: 2px solid rgba(255,255,255,0.2);
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Biografi Cristiano Ronaldo</h1>
-    </header>
-    <div class="container">
-        <section class="profile" aria-label="Profil Cristiano Ronaldo">
-            <img src="https://demokratis.co.id/wp-content/uploads/2025/08/Ronaldo.jpeg" alt="Cristiano Ronaldo" />
-            <div class="bio">
-                <h2>Siapa Cristiano Ronaldo?</h2>
-                <p>Cristiano Ronaldo dos Santos Aveiro (lahir 5 Februari 1985) adalah salah satu pemain sepakbola terbaik sepanjang masa asal Portugal. Dikenal karena kecepatan, kekuatan fisik, ketajaman mencetak gol, dan mentalitas juara, ia telah bermain di beberapa klub top dunia dan menjadi ikon global dalam olahraga dan bisnis.</p>
-            </div>
-        </section>
+  <header>
+    <h1>Biografi Cristiano Ronaldo</h1>
+    <nav>
+      <a href="index.html">Page 1</a> | 
+      <a href="prestasi.html">Page 2</a>
+    </nav>
+  </header>
 
-        <section>
-            <h2>Kehidupan Awal dan Karir Awal</h2>
-            <p>Ronaldo lahir di Funchal, Madeira, Portugal. Ia tumbuh dalam keluarga sederhana dan mulai bermain di klub lokal Andorinha pada usia 7 tahun, sebelum bergabung dengan Nacional. Bakatnya segera terlihat, dan pada usia 12 tahun ia direkrut oleh Sporting CP di Lisbon. Di sana ia berkembang pesat hingga akhirnya debut di tim utama pada tahun 2002.</p>
-        </section>
 
-        <section>
-            <h2>Karir Klub</h2>
-            <ul>
-                <li><strong>Sporting CP:</strong> Debut profesional tahun 2002, tampil impresif hingga dilirik klub besar Eropa.</li>
-                <li><strong>Manchester United (2003–2009):</strong> Meraih 3 gelar Premier League, 1 Liga Champions, dan Ballon d'Or pertama (2008).</li>
-                <li><strong>Real Madrid (2009–2018):</strong> Menjadi legenda klub dengan 450 gol dalam 438 pertandingan. Meraih 4 Liga Champions dan 4 Ballon d'Or tambahan.</li>
-                <li><strong>Juventus (2018–2021):</strong> Memenangkan 2 gelar Serie A dan menjadi pencetak gol terbanyak liga.</li>
-                <li><strong>Manchester United (2021–2022):</strong> Kembali ke Old Trafford dan langsung mencetak banyak gol penting.</li>
-                <li><strong>Al Nassr (2023–sekarang):</strong> Melanjutkan karir di Arab Saudi dengan tetap mencetak rekor.</li>
-            </ul>
-        </section>
 
-        <section>
-            <h2>Tim Nasional</h2>
-            <p>Bersama tim nasional Portugal, Ronaldo adalah pencetak gol terbanyak sepanjang sejarah sepakbola internasional. Ia memimpin Portugal meraih juara <strong>Euro 2016</strong> dan <strong>UEFA Nations League 2019</strong>. Hingga kini, ia sudah mencatat lebih dari 200 penampilan dan mencetak lebih dari 120 gol.</p>
-        </section>
+    <!-- Profil -->
+    <section class="profile card fade-in" aria-label="Profil Cristiano Ronaldo">
+      <img src="https://demokratis.co.id/wp-content/uploads/2025/08/Ronaldo.jpeg" alt="Cristiano Ronaldo" />
+      <div class="bio">
+        <h2>Siapa Cristiano Ronaldo?</h2>
+        <p>Cristiano Ronaldo dos Santos Aveiro (lahir 5 Februari 1985) adalah salah satu pemain sepakbola terbaik sepanjang masa asal Portugal. Ia dikenal karena kecepatan, kekuatan, dan kemampuan mencetak gol luar biasa.</p>
+      </div>
+      <div style="clear: both;"></div>
+    </section>
 
-        <section id="stats-section">
-            <h2>Grafik Prestasi Utama</h2>
-            <canvas id="stats-canvas" aria-label="Grafik batang prestasi utama Cristiano Ronaldo" role="img"></canvas>
-            <div id="tooltip" role="tooltip" aria-hidden="true"></div>
-        </section>
+    <!-- Kehidupan Awal -->
+    <section class="card fade-in">
+      <h2>Kehidupan Awal dan Karir Awal</h2>
+      <p>Ronaldo lahir di Funchal, Madeira, Portugal. Ia tumbuh dalam keluarga sederhana dan mulai menunjukkan bakat sejak kecil sebelum bergabung dengan akademi Sporting CP.</p>
+    </section>
 
-        <section>
-            <h2>Prestasi Utama</h2>
-            <div class="achievements">
-                <div class="achievement-item"><strong>Ballon d'Or:</strong> 5 kali</div>
-                <div class="achievement-item"><strong>Liga Champions:</strong> 5 kali</div>
-                <div class="achievement-item"><strong>Euro:</strong> 1 kali (2016)</div>
-                <div class="achievement-item"><strong>UEFA Nations League:</strong> 1 kali (2019)</div>
-                <div class="achievement-item"><strong>Top Skor Liga Champions:</strong> 7 kali</div>
-                <div class="achievement-item"><strong>Gol Internasional:</strong> 120+</div>
-            </div>
-        </section>
+    <!-- Timeline Karir Klub -->
+    <section class="card fade-in">
+      <h2>Timeline Karir Klub</h2>
+      <ul class="timeline">
+        <li><strong>2002:</strong> Debut profesional bersama Sporting CP.</li>
+        <li><strong>2003–2009:</strong> Manchester United – 3 gelar Premier League, 1 Liga Champions.</li>
+        <li><strong>2009–2018:</strong> Real Madrid – 450 gol dalam 438 pertandingan.</li>
+        <li><strong>2018–2021:</strong> Juventus – 2 gelar Serie A.</li>
+        <li><strong>2021–2022:</strong> Kembali ke Manchester United.</li>
+        <li><strong>2023–sekarang:</strong> Al Nassr di Arab Saudi.</li>
+      </ul>
+    </section>
 
-        <section>
-            <h2>Kehidupan Pribadi</h2>
-            <p>Di luar lapangan, Ronaldo dikenal sebagai sosok yang disiplin, pekerja keras, dan dermawan. Ia memiliki empat anak dan menjalin hubungan dengan Georgina Rodríguez. Ronaldo juga dikenal sebagai pengusaha sukses dengan merek fesyen <strong>CR7</strong>, hotel, parfum, serta berbagai kerja sama bisnis. Selain itu, ia aktif dalam kegiatan sosial dan kerap berdonasi untuk amal serta membantu korban bencana.</p>
-        </section>
+    <!-- Tim Nasional -->
+    <section class="card fade-in">
+      <h2>Tim Nasional Portugal</h2>
+      <p>Ronaldo adalah pencetak gol terbanyak sepanjang sejarah tim nasional Portugal dan memimpin mereka meraih gelar Euro 2016 serta UEFA Nations League 2019.</p>
+    </section>
 
-        <section>
-            <h2>Pengaruh dan Warisan</h2>
-            <p>Ronaldo dianggap sebagai salah satu pemain paling berpengaruh dalam sejarah sepakbola. Selain prestasi di lapangan, ia memiliki basis penggemar terbesar di media sosial, menjadi inspirasi bagi jutaan orang, dan membuka jalan bagi generasi baru pemain untuk menyeimbangkan olahraga dengan bisnis dan gaya hidup global.</p>
-        </section>
-    </div>
-    <footer>
-        <p>© 2025 Biografi Cristiano Ronaldo. Dibuat oleh Mochamad Lutfan Kamil</p>
-    </footer>
+    <!-- Fakta Menarik -->
+    <section class="card fade-in">
+      <h2>Fakta Menarik tentang Ronaldo</h2>
+      <div class="facts">
+        <div class="fact">👑 Pemain dengan gol terbanyak di Liga Champions.</div>
+        <div class="fact">⚡ Dijuluki "CR7" dari inisial namanya dan nomor punggung ikonik.</div>
+        <div class="fact">🌍 Atlet pertama yang memiliki lebih dari 500 juta pengikut di media sosial.</div>
+        <div class="fact">💪 Dikenal sangat disiplin menjaga pola makan dan latihan fisik.</div>
+        <div class="fact">❤️ Aktif dalam kegiatan amal, termasuk donasi besar untuk rumah sakit anak-anak.</div>
+      </div>
+    </section>
+  </div>
 
-    <button id="back-to-top" aria-label="Kembali ke atas" title="Kembali ke atas">↑</button>
-
-    <script>
-        // Accordion toggle for sections except profile
-        document.querySelectorAll('.container > section:not(.profile)').forEach(section => {
-            const header = section.querySelector('h2');
-            header.addEventListener('click', () => {
-                section.classList.toggle('collapsed');
-            });
-        });
-
-        // Back to top button
-        const backToTopBtn = document.getElementById('back-to-top');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTopBtn.classList.add('show');
-            } else {
-                backToTopBtn.classList.remove('show');
-            }
-        });
-        backToTopBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        // Chart with animation and tooltip
-        const statsData = {
-            labels: ['Ballon d\'Or', 'Liga Champions', 'Euro', 'UEFA Nations League', 'Gol Internasional'],
-            values: [5, 5, 1, 1, 120],
-            colors: ['#ffd700', '#ffcc00', '#ff9900', '#ff6600', '#ff3300']
-        };
-
-        const canvas = document.getElementById('stats-canvas');
-        const ctx = canvas.getContext('2d');
-        const tooltip = document.getElementById('tooltip');
-
-        function resizeCanvas() {
-            const rect = canvas.getBoundingClientRect();
-            canvas.width = rect.width * window.devicePixelRatio;
-            canvas.height = rect.height * window.devicePixelRatio;
-            ctx.setTransform(1, 0, 0, 1, 0, 0);
-            ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
-        }
-        resizeCanvas();
-        window.addEventListener('resize', () => {
-            resizeCanvas();
-            drawChart(currentAnimationProgress);
-        });
-
-        let animationDuration = 1000; // ms
-        let animationStart = null;
-        let currentAnimationProgress = 0;
-
-        function drawChart(progress = 1) {
-            const width = canvas.clientWidth;
-            const height = canvas.clientHeight;
-            const padding = 60;
-            const barWidth = (width - padding * 2) / statsData.values.length * 0.6;
-            const maxVal = Math.max(...statsData.values) * 1.1;
-
-            ctx.clearRect(0, 0, width, height);
-
-            // Background gradient
-            const bgGradient = ctx.createLinearGradient(0, 0, 0, height);
-            bgGradient.addColorStop(0, '#1e3c72');
-            bgGradient.addColorStop(1, '#2a5298');
-            ctx.fillStyle = bgGradient;
-            ctx.fillRect(0, 0, width, height);
-
-            // Axes
-            ctx.strokeStyle = '#fff';
-            ctx.lineWidth = 2;
-            ctx.beginPath();
-            ctx.moveTo(padding, padding / 2);
-            ctx.lineTo(padding, height - padding);
-            ctx.lineTo(width - padding / 2, height - padding);
-            ctx.stroke();
-
-            // Y-axis labels and grid lines
-            ctx.fillStyle = '#fff';
-            ctx.font = '14px Poppins, Arial';
-            ctx.textAlign = 'right';
-            const steps = 5;
-            for (let i = 0; i <= steps; i++) {
-                const y = padding + ((height - 2 * padding) / steps) * i;
-                const val = Math.round(maxVal - (maxVal / steps) * i);
-                ctx.fillText(val, padding - 10, y + 5);
-                ctx.strokeStyle = 'rgba(255,255,255,0.2)';
-                ctx.lineWidth = 1;
-                ctx.beginPath();
-                ctx.moveTo(padding, y);
-                ctx.lineTo(width - padding / 2, y);
-                ctx.stroke();
-            }
-
-            // Bars
-            statsData.values.forEach((val, i) => {
-                const barHeight = (val / maxVal) * (height - 2 * padding) * progress;
-                const x = padding + (i + 0.5) * ((width - 2 * padding) / statsData.values.length);
-                const y = height - padding - barHeight;
-
-                const barGradient = ctx.createLinearGradient(x, y, x, height - padding);
-                barGradient.addColorStop(0, statsData.colors[i]);
-                barGradient.addColorStop(1, '#222');
-
-                ctx.fillStyle = barGradient;
-                ctx.fillRect(x - barWidth / 2, y, barWidth, barHeight);
-
-                ctx.fillStyle = '#fff';
-                ctx.font = 'bold 16px Poppins, Arial';
-                ctx.textAlign = 'center';
-                ctx.fillText(val, x, y - 10);
-
-                ctx.font = '14px Poppins, Arial';
-                ctx.fillText(statsData.labels[i], x, height - padding + 20);
-            });
-        }
-
-        // Animate chart bars on load
-        function animateChart(timestamp) {
-            if (!animationStart) animationStart = timestamp;
-            const elapsed = timestamp - animationStart;
-            currentAnimationProgress = Math.min(elapsed / animationDuration, 1);
-            drawChart(currentAnimationProgress);
-            if (elapsed < animationDuration) {
-                requestAnimationFrame(animateChart);
-            }
-        }
-        requestAnimationFrame(animateChart);
-
-                // Tooltip interactivity
-        canvas.addEventListener('mousemove', (e) => {
-            const rect = canvas.getBoundingClientRect();
-            const mouseX = (e.clientX - rect.left);
-            const mouseY = (e.clientY - rect.top);
-            const width = canvas.clientWidth;
-            const height = canvas.clientHeight;
-            const padding = 60;
-            const barWidth = (width - padding * 2) / statsData.values.length * 0.6;
-            const maxVal = Math.max(...statsData.values) * 1.1;
-
-            let found = false;
-
-            statsData.values.forEach((val, i) => {
-                const x = padding + (i + 0.5) * ((width - 2 * padding) / statsData.values.length);
-                const barHeight = (val / maxVal) * (height - 2 * padding) * currentAnimationProgress;
-                const y = height - padding - barHeight;
-                const left = x - barWidth / 2;
-                const right = x + barWidth / 2;
-                const top = y;
-                const bottom = height - padding;
-
-                if (mouseX >= left && mouseX <= right && mouseY >= top && mouseY <= bottom) {
-                    // Show tooltip
-                    tooltip.style.opacity = '1';
-                    tooltip.style.left = `${e.clientX + 15}px`;
-                    tooltip.style.top = `${e.clientY - 30}px`;
-                    tooltip.setAttribute('aria-hidden', 'false');
-                    tooltip.textContent = `${statsData.labels[i]}: ${val}`;
-                    found = true;
-                }
-            });
-
-            if (!found) {
-                tooltip.style.opacity = '0';
-                tooltip.setAttribute('aria-hidden', 'true');
-            }
-        });
-
-        canvas.addEventListener('mouseleave', () => {
-            tooltip.style.opacity = '0';
-            tooltip.setAttribute('aria-hidden', 'true');
-        });
-    </script>
+  <footer>
+    <p>© 2025 Biografi Cristiano Ronaldo. Dibuat oleh Mochammad Lutfan Kamil</p>
+  </footer>
 </body>
 </html>
